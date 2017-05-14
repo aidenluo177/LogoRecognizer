@@ -1,0 +1,16 @@
+PODS:
+  - LogoRecognizer (1.0.0)
+
+DEPENDENCIES:
+  - LogoRecognizer (from `../LogoRecognizer`)
+
+EXTERNAL SOURCES:
+  LogoRecognizer:
+    :path: ../LogoRecognizer
+
+SPEC CHECKSUMS:
+  LogoRecognizer: a591dba507b3c9dba45e59b177fd9fa4c7e0876d
+
+PODFILE CHECKSUM: c7b978417154d74c130136f5c4e4476cd8deede5
+
+COCOAPODS: 1.2.1
