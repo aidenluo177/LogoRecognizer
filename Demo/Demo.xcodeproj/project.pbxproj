@@ -389,6 +389,7 @@
 				BC6593FF1EC827C000531C57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

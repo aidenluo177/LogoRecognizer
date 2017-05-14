@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <LogoRecognizer/LogoRecognizer.h>
 
-@interface ViewController ()
+@interface ViewController ()<LRViewControllerDelegate>
 
 @end
 
@@ -17,25 +17,67 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    LRViewController *vc = [LRViewController create];
-    NSLog(@"%@", vc);
-    [self presentViewController:vc animated:true completion:^{
-        
-    }];
+    [self.navigationController setNavigationBarHidden:false animated:animated];
 }
 
+- (IBAction)testSDKAction:(UIButton *)sender {
+    LRViewController *vc = [LRViewController create];
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:true];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)LRViewControllerViewDidLoad:(LRViewController *)controller
+{
+    UIView *container = controller.overlayView;
+    container.backgroundColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:0.1];
+    UILabel *tip = [UILabel new];
+    tip.text = @"可在此View是自定义想要的效果";
+    tip.textColor = [UIColor whiteColor];
+    [tip sizeToFit];
+    tip.translatesAutoresizingMaskIntoConstraints = false;
+    [container addSubview:tip];
+    [tip.centerXAnchor constraintEqualToAnchor:container.centerXAnchor].active = true;
+    [tip.topAnchor constraintEqualToAnchor:container.topAnchor constant:10].active = true;
+}
+
+- (void)LRViewControllerViewWillAppear:(LRViewController *)controller
+{
+    
+}
+
+- (void)LRViewControllerViewDidAppear:(LRViewController *)controller
+{
+    
+}
+
+- (void)LRViewControllerViewWillDisappear:(LRViewController *)controller
+{
+    
+}
+
+- (void)LRViewControllerViewDidDisappear:(LRViewController *)controller
+{
+    
+}
+
+- (void)LRViewControllerRecognizeLogoSuccess
+{
+    
+}
+
+- (void)LRViewControllerRecognizeLogoFail
+{
+    
+}
 
 @end

@@ -21,21 +21,21 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		BC0208991EC83BDA00E33DDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0208981EC83BDA00E33DDB /* AVFoundation.framework */; };
 		BC6593CE1EC81B6700531C57 /* LogoRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6593CC1EC81B6700531C57 /* LogoRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC7C9DFA1EC82B2F00A4DB7D /* LRViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7C9DF71EC82B2F00A4DB7D /* LRViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC7C9DFB1EC82B2F00A4DB7D /* LRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C9DF81EC82B2F00A4DB7D /* LRViewController.m */; };
 		BC7C9DFC1EC82B2F00A4DB7D /* LRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7C9DF91EC82B2F00A4DB7D /* LRViewController.xib */; };
-		BC7C9DFE1EC8301E00A4DB7D /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC7C9DFD1EC8301E00A4DB7D /* Image.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC0208981EC83BDA00E33DDB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BC6593C91EC81B6700531C57 /* LogoRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LogoRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6593CC1EC81B6700531C57 /* LogoRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoRecognizer.h; sourceTree = "<group>"; };
 		BC6593CD1EC81B6700531C57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC7C9DF71EC82B2F00A4DB7D /* LRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRViewController.h; sourceTree = "<group>"; };
 		BC7C9DF81EC82B2F00A4DB7D /* LRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRViewController.m; sourceTree = "<group>"; };
 		BC7C9DF91EC82B2F00A4DB7D /* LRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRViewController.xib; sourceTree = "<group>"; };
-		BC7C9DFD1EC8301E00A4DB7D /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +43,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0208991EC83BDA00E33DDB /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC0208971EC83BD900E33DDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC0208981EC83BDA00E33DDB /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC6593BF1EC81B6700531C57 = {
 			isa = PBXGroup;
 			children = (
 				BC6593CB1EC81B6700531C57 /* LogoRecognizer */,
 				BC6593CA1EC81B6700531C57 /* Products */,
+				BC0208971EC83BD900E33DDB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,7 +83,6 @@
 				BC7C9DF71EC82B2F00A4DB7D /* LRViewController.h */,
 				BC7C9DF81EC82B2F00A4DB7D /* LRViewController.m */,
 				BC7C9DF91EC82B2F00A4DB7D /* LRViewController.xib */,
-				BC7C9DFD1EC8301E00A4DB7D /* Image.xcassets */,
 			);
 			path = LogoRecognizer;
 			sourceTree = "<group>";
@@ -156,7 +165,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC7C9DFC1EC82B2F00A4DB7D /* LRViewController.xib in Resources */,
-				BC7C9DFE1EC8301E00A4DB7D /* Image.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

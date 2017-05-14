@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LRViewController">
             <connections>
+                <outlet property="overlayView" destination="Atx-iR-fzP" id="hrW-Se-9FP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,22 +20,62 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello World!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjS-MN-TzJ">
-                    <rect key="frame" x="140" y="323" width="94" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login-icon-wechat" translatesAutoresizingMaskIntoConstraints="NO" id="M05-7O-TSZ">
-                    <rect key="frame" x="175" y="278" width="25" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Atx-iR-fzP">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIH-4E-xTN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGM-zJ-YXB">
+                            <rect key="frame" x="10" y="18" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="QrI-J1-Wor"/>
+                                <constraint firstAttribute="height" constant="44" id="efT-2b-bpB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="返回">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="63A-WC-JLu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIs-Tb-JTh">
+                            <rect key="frame" x="321" y="18" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="BDt-mn-OiZ"/>
+                                <constraint firstAttribute="width" constant="44" id="ted-j7-c32"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="相册">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="photoAlbumAction:" destination="-1" eventType="touchUpInside" id="Ofk-Ye-jtC"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="yIs-Tb-JTh" firstAttribute="centerY" secondItem="PIH-4E-xTN" secondAttribute="centerY" constant="8" id="7pt-8x-sxV"/>
+                        <constraint firstAttribute="trailing" secondItem="yIs-Tb-JTh" secondAttribute="trailing" constant="10" id="G9s-GZ-hzA"/>
+                        <constraint firstItem="AGM-zJ-YXB" firstAttribute="leading" secondItem="PIH-4E-xTN" secondAttribute="leading" constant="10" id="bdN-aj-stS"/>
+                        <constraint firstAttribute="height" constant="64" id="p5O-WP-DeH"/>
+                        <constraint firstItem="AGM-zJ-YXB" firstAttribute="centerY" secondItem="PIH-4E-xTN" secondAttribute="centerY" constant="8" id="yTy-yV-Z3o"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="PIH-4E-xTN" secondAttribute="trailing" id="945-im-nEA"/>
+                <constraint firstItem="PIH-4E-xTN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="K4l-7a-RoI"/>
+                <constraint firstAttribute="trailing" secondItem="Atx-iR-fzP" secondAttribute="trailing" id="UOB-c2-CIy"/>
+                <constraint firstAttribute="bottom" secondItem="Atx-iR-fzP" secondAttribute="bottom" id="ZLe-y9-RMq"/>
+                <constraint firstItem="PIH-4E-xTN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="elM-gv-UFk"/>
+                <constraint firstItem="Atx-iR-fzP" firstAttribute="top" secondItem="PIH-4E-xTN" secondAttribute="bottom" id="gsE-iH-9b6"/>
+                <constraint firstItem="Atx-iR-fzP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rV5-VJ-gZI"/>
+            </constraints>
         </view>
     </objects>
-    <resources>
-        <image name="login-icon-wechat" width="25" height="25"/>
-    </resources>
 </document>
