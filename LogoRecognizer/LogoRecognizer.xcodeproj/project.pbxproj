@@ -22,19 +22,36 @@
 
 /* Begin PBXBuildFile section */
 		BC0208991EC83BDA00E33DDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0208981EC83BDA00E33DDB /* AVFoundation.framework */; };
+		BC0307891EC9AEFF00F970D5 /* LRRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BC0307871EC9AEFF00F970D5 /* LRRecognizer.h */; };
+		BC03078A1EC9AEFF00F970D5 /* LRRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC0307881EC9AEFF00F970D5 /* LRRecognizer.mm */; };
+		BC03078E1EC9B0FA00F970D5 /* cascade.xml in Resources */ = {isa = PBXBuildFile; fileRef = BC03078D1EC9B0FA00F970D5 /* cascade.xml */; };
+		BC0307901EC9B53C00F970D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC03078F1EC9B53C00F970D5 /* UIKit.framework */; };
+		BC0307921EC9B55300F970D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0307911EC9B55300F970D5 /* CoreGraphics.framework */; };
+		BC0307941EC9B56200F970D5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0307931EC9B56200F970D5 /* CoreVideo.framework */; };
+		BC0307981EC9B5DD00F970D5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0307971EC9B5DD00F970D5 /* CoreMedia.framework */; };
+		BC0307B81EC9DEA400F970D5 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0307B71EC9DEA400F970D5 /* opencv2.framework */; };
 		BC6593CE1EC81B6700531C57 /* LogoRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6593CC1EC81B6700531C57 /* LogoRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC7C9DFA1EC82B2F00A4DB7D /* LRViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7C9DF71EC82B2F00A4DB7D /* LRViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BC7C9DFB1EC82B2F00A4DB7D /* LRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7C9DF81EC82B2F00A4DB7D /* LRViewController.m */; };
+		BC7C9DFB1EC82B2F00A4DB7D /* LRViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC7C9DF81EC82B2F00A4DB7D /* LRViewController.mm */; };
 		BC7C9DFC1EC82B2F00A4DB7D /* LRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7C9DF91EC82B2F00A4DB7D /* LRViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BC0208981EC83BDA00E33DDB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BC0307871EC9AEFF00F970D5 /* LRRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRRecognizer.h; sourceTree = "<group>"; };
+		BC0307881EC9AEFF00F970D5 /* LRRecognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LRRecognizer.mm; sourceTree = "<group>"; };
+		BC03078D1EC9B0FA00F970D5 /* cascade.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cascade.xml; sourceTree = "<group>"; };
+		BC03078F1EC9B53C00F970D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC0307911EC9B55300F970D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BC0307931EC9B56200F970D5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		BC0307951EC9B59300F970D5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		BC0307971EC9B5DD00F970D5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BC0307B71EC9DEA400F970D5 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "../../learn-opencv/opencv3/opencv2.framework"; sourceTree = "<group>"; };
 		BC6593C91EC81B6700531C57 /* LogoRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LogoRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6593CC1EC81B6700531C57 /* LogoRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoRecognizer.h; sourceTree = "<group>"; };
 		BC6593CD1EC81B6700531C57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC7C9DF71EC82B2F00A4DB7D /* LRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRViewController.h; sourceTree = "<group>"; };
-		BC7C9DF81EC82B2F00A4DB7D /* LRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRViewController.m; sourceTree = "<group>"; };
+		BC7C9DF81EC82B2F00A4DB7D /* LRViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LRViewController.mm; sourceTree = "<group>"; };
 		BC7C9DF91EC82B2F00A4DB7D /* LRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0307B81EC9DEA400F970D5 /* opencv2.framework in Frameworks */,
+				BC0307981EC9B5DD00F970D5 /* CoreMedia.framework in Frameworks */,
+				BC0307941EC9B56200F970D5 /* CoreVideo.framework in Frameworks */,
+				BC0307921EC9B55300F970D5 /* CoreGraphics.framework in Frameworks */,
+				BC0307901EC9B53C00F970D5 /* UIKit.framework in Frameworks */,
 				BC0208991EC83BDA00E33DDB /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +75,12 @@
 		BC0208971EC83BD900E33DDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC0307B71EC9DEA400F970D5 /* opencv2.framework */,
+				BC0307971EC9B5DD00F970D5 /* CoreMedia.framework */,
+				BC0307951EC9B59300F970D5 /* ImageIO.framework */,
+				BC0307931EC9B56200F970D5 /* CoreVideo.framework */,
+				BC0307911EC9B55300F970D5 /* CoreGraphics.framework */,
+				BC03078F1EC9B53C00F970D5 /* UIKit.framework */,
 				BC0208981EC83BDA00E33DDB /* AVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -78,10 +106,13 @@
 		BC6593CB1EC81B6700531C57 /* LogoRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				BC03078D1EC9B0FA00F970D5 /* cascade.xml */,
 				BC6593CC1EC81B6700531C57 /* LogoRecognizer.h */,
 				BC6593CD1EC81B6700531C57 /* Info.plist */,
 				BC7C9DF71EC82B2F00A4DB7D /* LRViewController.h */,
-				BC7C9DF81EC82B2F00A4DB7D /* LRViewController.m */,
+				BC7C9DF81EC82B2F00A4DB7D /* LRViewController.mm */,
+				BC0307871EC9AEFF00F970D5 /* LRRecognizer.h */,
+				BC0307881EC9AEFF00F970D5 /* LRRecognizer.mm */,
 				BC7C9DF91EC82B2F00A4DB7D /* LRViewController.xib */,
 			);
 			path = LogoRecognizer;
@@ -96,6 +127,7 @@
 			files = (
 				BC7C9DFA1EC82B2F00A4DB7D /* LRViewController.h in Headers */,
 				BC6593CE1EC81B6700531C57 /* LogoRecognizer.h in Headers */,
+				BC0307891EC9AEFF00F970D5 /* LRRecognizer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC03078E1EC9B0FA00F970D5 /* cascade.xml in Resources */,
 				BC7C9DFC1EC82B2F00A4DB7D /* LRViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,7 +215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FMK_NAME=${PROJECT_NAME}\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\nopen \"${INSTALL_DIR}\"";
+			shellScript = "FMK_NAME=${PROJECT_NAME}\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\n#SIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\n#xcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n#lipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\nopen \"${INSTALL_DIR}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -191,7 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC7C9DFB1EC82B2F00A4DB7D /* LRViewController.m in Sources */,
+				BC7C9DFB1EC82B2F00A4DB7D /* LRViewController.mm in Sources */,
+				BC03078A1EC9AEFF00F970D5 /* LRRecognizer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +339,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/aidenluo/Desktop/TestBoard/iOS/learn-opencv/opencv3",
+				);
 				INFOPLIST_FILE = LogoRecognizer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -324,6 +363,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/aidenluo/Desktop/TestBoard/iOS/learn-opencv/opencv3",
+				);
 				INFOPLIST_FILE = LogoRecognizer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

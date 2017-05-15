@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0570D9EF29DDE6447A1264CA /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0DF4296BE1B911A0AE252 /* libPods-Demo.a */; };
+		BC0307A41EC9DB2500F970D5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0307A31EC9DB2500F970D5 /* AVFoundation.framework */; };
+		BC0307A61EC9DB2A00F970D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0307A51EC9DB2A00F970D5 /* UIKit.framework */; };
+		BC0307A81EC9DB7800F970D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0307A71EC9DB7800F970D5 /* CoreGraphics.framework */; };
+		BC0307AA1EC9DB8700F970D5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0307A91EC9DB8700F970D5 /* CoreVideo.framework */; };
+		BC0307AC1EC9DB8C00F970D5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0307AB1EC9DB8C00F970D5 /* CoreMedia.framework */; };
+		BC0307B21EC9DCC600F970D5 /* LogoRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC03079F1EC9DAC300F970D5 /* LogoRecognizer.framework */; };
+		BC0307B31EC9DCC600F970D5 /* LogoRecognizer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC03079F1EC9DAC300F970D5 /* LogoRecognizer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BC6593EB1EC827C000531C57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6593EA1EC827C000531C57 /* main.m */; };
 		BC6593EE1EC827C000531C57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6593ED1EC827C000531C57 /* AppDelegate.m */; };
 		BC6593F11EC827C000531C57 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6593F01EC827C000531C57 /* ViewController.m */; };
@@ -16,10 +22,53 @@
 		BC6593F91EC827C000531C57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6593F71EC827C000531C57 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BC03079E1EC9DAC300F970D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC0307991EC9DAC300F970D5 /* LogoRecognizer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC6593C91EC81B6700531C57;
+			remoteInfo = LogoRecognizer;
+		};
+		BC0307AF1EC9DCB500F970D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC0307991EC9DAC300F970D5 /* LogoRecognizer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC6593C81EC81B6700531C57;
+			remoteInfo = LogoRecognizer;
+		};
+		BC0307B41EC9DCC600F970D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC0307991EC9DAC300F970D5 /* LogoRecognizer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC6593C81EC81B6700531C57;
+			remoteInfo = LogoRecognizer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BC0307B61EC9DCC600F970D5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BC0307B31EC9DCC600F970D5 /* LogoRecognizer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		07B0DF4296BE1B911A0AE252 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3306A09B0EC6C9070FDEB7DB /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		6AA5B3821C922D1CDCD0F605 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		BC0307991EC9DAC300F970D5 /* LogoRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LogoRecognizer.xcodeproj; path = ../LogoRecognizer/LogoRecognizer.xcodeproj; sourceTree = "<group>"; };
+		BC0307A31EC9DB2500F970D5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BC0307A51EC9DB2A00F970D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC0307A71EC9DB7800F970D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BC0307A91EC9DB8700F970D5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		BC0307AB1EC9DB8C00F970D5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BC6593E61EC827C000531C57 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6593EA1EC827C000531C57 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC6593EC1EC827C000531C57 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,7 +86,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0570D9EF29DDE6447A1264CA /* libPods-Demo.a in Frameworks */,
+				BC0307AC1EC9DB8C00F970D5 /* CoreMedia.framework in Frameworks */,
+				BC0307AA1EC9DB8700F970D5 /* CoreVideo.framework in Frameworks */,
+				BC0307A81EC9DB7800F970D5 /* CoreGraphics.framework in Frameworks */,
+				BC0307B21EC9DCC600F970D5 /* LogoRecognizer.framework in Frameworks */,
+				BC0307A61EC9DB2A00F970D5 /* UIKit.framework in Frameworks */,
+				BC0307A41EC9DB2500F970D5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +107,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BC03079A1EC9DAC300F970D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC03079F1EC9DAC300F970D5 /* LogoRecognizer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BC6593DD1EC827C000531C57 = {
 			isa = PBXGroup;
 			children = (
+				BC0307991EC9DAC300F970D5 /* LogoRecognizer.xcodeproj */,
 				BC6593E81EC827C000531C57 /* Demo */,
 				BC6593E71EC827C000531C57 /* Products */,
 				491D28C31E3EFA9DDBD159A1 /* Pods */,
@@ -98,7 +161,11 @@
 		DEE1E3ABB087F395B538D889 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07B0DF4296BE1B911A0AE252 /* libPods-Demo.a */,
+				BC0307AB1EC9DB8C00F970D5 /* CoreMedia.framework */,
+				BC0307A91EC9DB8700F970D5 /* CoreVideo.framework */,
+				BC0307A71EC9DB7800F970D5 /* CoreGraphics.framework */,
+				BC0307A51EC9DB2A00F970D5 /* UIKit.framework */,
+				BC0307A31EC9DB2500F970D5 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,16 +177,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC6593FD1EC827C000531C57 /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
-				5F1871BE4DDF8CDDB2630E97 /* [CP] Check Pods Manifest.lock */,
 				BC6593E21EC827C000531C57 /* Sources */,
 				BC6593E31EC827C000531C57 /* Frameworks */,
 				BC6593E41EC827C000531C57 /* Resources */,
-				C15784A372891CD58953F282 /* [CP] Embed Pods Frameworks */,
-				2273F269BBAEEF5B768786C0 /* [CP] Copy Pods Resources */,
+				BC0307B61EC9DCC600F970D5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BC0307B01EC9DCB500F970D5 /* PBXTargetDependency */,
+				BC0307B51EC9DCC600F970D5 /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = Demo;
@@ -153,12 +220,28 @@
 			mainGroup = BC6593DD1EC827C000531C57;
 			productRefGroup = BC6593E71EC827C000531C57 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BC03079A1EC9DAC300F970D5 /* Products */;
+					ProjectRef = BC0307991EC9DAC300F970D5 /* LogoRecognizer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BC6593E51EC827C000531C57 /* Demo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BC03079F1EC9DAC300F970D5 /* LogoRecognizer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LogoRecognizer.framework;
+			remoteRef = BC03079E1EC9DAC300F970D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BC6593E41EC827C000531C57 /* Resources */ = {
@@ -173,54 +256,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2273F269BBAEEF5B768786C0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F1871BE4DDF8CDDB2630E97 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C15784A372891CD58953F282 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		BC6593E21EC827C000531C57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -233,6 +268,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC0307B01EC9DCB500F970D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LogoRecognizer;
+			targetProxy = BC0307AF1EC9DCB500F970D5 /* PBXContainerItemProxy */;
+		};
+		BC0307B51EC9DCC600F970D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LogoRecognizer;
+			targetProxy = BC0307B41EC9DCC600F970D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BC6593F21EC827C000531C57 /* Main.storyboard */ = {

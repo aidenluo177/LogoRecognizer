@@ -38,16 +38,16 @@
 
 - (void)LRViewControllerViewDidLoad:(LRViewController *)controller
 {
-    UIView *container = controller.overlayView;
-    container.backgroundColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:0.1];
-    UILabel *tip = [UILabel new];
-    tip.text = @"可在此View是自定义想要的效果";
-    tip.textColor = [UIColor whiteColor];
-    [tip sizeToFit];
-    tip.translatesAutoresizingMaskIntoConstraints = false;
-    [container addSubview:tip];
-    [tip.centerXAnchor constraintEqualToAnchor:container.centerXAnchor].active = true;
-    [tip.topAnchor constraintEqualToAnchor:container.topAnchor constant:10].active = true;
+//    UIView *container = controller.overlayView;
+//    container.backgroundColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:0.1];
+//    UILabel *tip = [UILabel new];
+//    tip.text = @"可在此View是自定义想要的效果";
+//    tip.textColor = [UIColor whiteColor];
+//    [tip sizeToFit];
+//    tip.translatesAutoresizingMaskIntoConstraints = false;
+//    [container addSubview:tip];
+//    [tip.centerXAnchor constraintEqualToAnchor:container.centerXAnchor].active = true;
+//    [tip.topAnchor constraintEqualToAnchor:container.topAnchor constant:10].active = true;
 }
 
 - (void)LRViewControllerViewWillAppear:(LRViewController *)controller
@@ -72,12 +72,12 @@
 
 - (void)LRViewControllerRecognizeLogoSuccess
 {
-    
+    NSLog(@"识别成功");
 }
 
 - (void)LRViewControllerRecognizeLogoFail
 {
-    
+    NSLog(@"识别失败");
 }
 
 @end

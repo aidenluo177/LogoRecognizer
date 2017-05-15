@@ -1,1 +1,0 @@
-../../../../../../LogoRecognizer/Products/LogoRecognizer.framework/Headers/LogoRecognizer.h
