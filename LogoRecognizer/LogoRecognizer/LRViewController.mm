@@ -16,6 +16,7 @@
 @property (strong, nonatomic) AVCaptureDevice *videoCaptureDevice;
 @property (strong, nonatomic) AVCaptureDeviceInput *videoDeviceInput;
 @property (strong, nonatomic) AVCaptureVideoDataOutput *videoDataOutput;
+@property (strong, nonatomic) AVCaptureConnection *videoConnection;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (assign, nonatomic) BOOL isRecoginzing;
 @property (strong, nonatomic) LRRecognizer *recognizer;
@@ -63,6 +64,7 @@
 {
     [super viewDidDisappear:animated];
     [self.delegate LRViewControllerViewDidDisappear:self];
+    [self stopCamera];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -134,6 +136,8 @@
             return;
         }
         self.videoDataOutput = [AVCaptureVideoDataOutput new];
+        [self.videoDataOutput setAlwaysDiscardsLateVideoFrames:true];
+        [self.videoDataOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA] forKey:(id)kCVPixelBufferPixelFormatTypeKey]];
         [self.videoDataOutput setSampleBufferDelegate:self queue:dispatch_queue_create("ARVideoDataOutputQueue", DISPATCH_QUEUE_SERIAL)];
         if ([self.session canAddOutput:self.videoDataOutput]) {
             [self.session addOutput:self.videoDataOutput];
@@ -141,6 +145,8 @@
             [self showAlert:@"Can't add video device output"];
             return;
         }
+        self.videoConnection = [self.videoDataOutput connectionWithMediaType:AVMediaTypeVideo];
+        [self.videoConnection setVideoOrientation:AVCaptureVideoOrientationPortrait];
     }
     
     //if we had disabled the connection on capture, re-enable it
@@ -175,7 +181,7 @@
         return;
     }
     self.isRecoginzing = true;
-    UIImage *image = [UIImage imageWithCGImage:[self imageFromSampleBuffer:sampleBuffer]];
+    UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
     BOOL recognizeSuccess = [self.recognizer recoginzeObjectIn:image];
     if (recognizeSuccess) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -247,26 +253,26 @@
 
 #pragma mark - Helper Method
 
-- (CGImageRef)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer // Create a CGImageRef from sample buffer data
+- (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer // Create a CGImageRef from sample buffer data
 {
-    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    CVPixelBufferLockBaseAddress(imageBuffer,0);        // Lock the image buffer
-    
-    uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);   // Get information of the image
-    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-    size_t width = CVPixelBufferGetWidth(imageBuffer);
-    size_t height = CVPixelBufferGetHeight(imageBuffer);
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    CGContextRef newContext = CGBitmapContextCreate(baseAddress, width, height, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
-    CGImageRef newImage = CGBitmapContextCreateImage(newContext);
-    CGContextRelease(newContext);
-    
-    CGColorSpaceRelease(colorSpace);
-    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
-    /* CVBufferRelease(imageBuffer); */  // do not call this!
-    
-    return newImage;
+    @autoreleasepool {
+        CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+        CVPixelBufferLockBaseAddress(imageBuffer,0);        // Lock the image buffer
+        uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);   // Get information of the image
+        size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+        size_t width = CVPixelBufferGetWidth(imageBuffer);
+        size_t height = CVPixelBufferGetHeight(imageBuffer);
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        
+        CGContextRef newContext = CGBitmapContextCreate(baseAddress, width, height, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+        CGImageRef newImage = CGBitmapContextCreateImage(newContext);
+        CGContextRelease(newContext);
+        CGColorSpaceRelease(colorSpace);
+        CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+        UIImage *image = [UIImage imageWithCGImage:newImage];
+        CGImageRelease(newImage);
+        return image;
+    }
 }
 
 @end
