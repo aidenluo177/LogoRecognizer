@@ -10,7 +10,7 @@
 
 @interface LRRecognizer ()
 {
-    cv::CascadeClassifier cascade;
+    cv::CascadeClassifier* cascade;
 }
 
 @end
@@ -22,9 +22,15 @@
     self = [super init];
     if (self) {
         NSString *cascadePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"cascade" ofType:@"xml"];
-        cascade.load([cascadePath UTF8String]);
+        cascade = new cv::CascadeClassifier();
+        cascade -> load([cascadePath UTF8String]);
     }
     return self;
+}
+
+- (void)dealloc
+{
+    delete cascade;
 }
 
 - (BOOL)recoginzeObjectIn:(UIImage *)image
@@ -39,7 +45,7 @@
         UIImageToMat(image, scene);
         cvtColor(scene, scene, CV_BGR2GRAY);
         equalizeHist(scene, scene);
-        cascade.detectMultiScale(scene, recognizeRegions);
+        cascade -> detectMultiScale(scene, recognizeRegions);
         scene.release();
         return recognizeRegions.size() > 0;
     }
