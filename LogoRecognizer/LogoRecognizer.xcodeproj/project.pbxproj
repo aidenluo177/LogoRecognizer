@@ -34,6 +34,17 @@
 		BC7C9DFA1EC82B2F00A4DB7D /* LRViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7C9DF71EC82B2F00A4DB7D /* LRViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC7C9DFB1EC82B2F00A4DB7D /* LRViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC7C9DF81EC82B2F00A4DB7D /* LRViewController.mm */; };
 		BC7C9DFC1EC82B2F00A4DB7D /* LRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7C9DF91EC82B2F00A4DB7D /* LRViewController.xib */; };
+		BC8B6CA61ECD88F400822FD1 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8B6CA51ECD88F400822FD1 /* Image.xcassets */; };
+		BC8B6CB41ECD942B00822FD1 /* LBXScanLineAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8B6CA91ECD942B00822FD1 /* LBXScanLineAnimation.h */; };
+		BC8B6CB51ECD942B00822FD1 /* LBXScanLineAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8B6CAA1ECD942B00822FD1 /* LBXScanLineAnimation.m */; };
+		BC8B6CB61ECD942B00822FD1 /* LBXScanNetAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8B6CAB1ECD942B00822FD1 /* LBXScanNetAnimation.h */; };
+		BC8B6CB71ECD942B00822FD1 /* LBXScanNetAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8B6CAC1ECD942B00822FD1 /* LBXScanNetAnimation.m */; };
+		BC8B6CB81ECD942B00822FD1 /* LBXScanVideoZoomView.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8B6CAD1ECD942B00822FD1 /* LBXScanVideoZoomView.h */; };
+		BC8B6CB91ECD942B00822FD1 /* LBXScanVideoZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8B6CAE1ECD942B00822FD1 /* LBXScanVideoZoomView.m */; };
+		BC8B6CBA1ECD942B00822FD1 /* LBXScanView.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8B6CAF1ECD942B00822FD1 /* LBXScanView.h */; };
+		BC8B6CBB1ECD942B00822FD1 /* LBXScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8B6CB01ECD942B00822FD1 /* LBXScanView.m */; };
+		BC8B6CBC1ECD942B00822FD1 /* LBXScanViewStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = BC8B6CB11ECD942B00822FD1 /* LBXScanViewStyle.h */; };
+		BC8B6CBD1ECD942B00822FD1 /* LBXScanViewStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8B6CB21ECD942B00822FD1 /* LBXScanViewStyle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +64,17 @@
 		BC7C9DF71EC82B2F00A4DB7D /* LRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRViewController.h; sourceTree = "<group>"; };
 		BC7C9DF81EC82B2F00A4DB7D /* LRViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LRViewController.mm; sourceTree = "<group>"; };
 		BC7C9DF91EC82B2F00A4DB7D /* LRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LRViewController.xib; sourceTree = "<group>"; };
+		BC8B6CA51ECD88F400822FD1 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		BC8B6CA91ECD942B00822FD1 /* LBXScanLineAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXScanLineAnimation.h; sourceTree = "<group>"; };
+		BC8B6CAA1ECD942B00822FD1 /* LBXScanLineAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXScanLineAnimation.m; sourceTree = "<group>"; };
+		BC8B6CAB1ECD942B00822FD1 /* LBXScanNetAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXScanNetAnimation.h; sourceTree = "<group>"; };
+		BC8B6CAC1ECD942B00822FD1 /* LBXScanNetAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXScanNetAnimation.m; sourceTree = "<group>"; };
+		BC8B6CAD1ECD942B00822FD1 /* LBXScanVideoZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXScanVideoZoomView.h; sourceTree = "<group>"; };
+		BC8B6CAE1ECD942B00822FD1 /* LBXScanVideoZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXScanVideoZoomView.m; sourceTree = "<group>"; };
+		BC8B6CAF1ECD942B00822FD1 /* LBXScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXScanView.h; sourceTree = "<group>"; };
+		BC8B6CB01ECD942B00822FD1 /* LBXScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXScanView.m; sourceTree = "<group>"; };
+		BC8B6CB11ECD942B00822FD1 /* LBXScanViewStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXScanViewStyle.h; sourceTree = "<group>"; };
+		BC8B6CB21ECD942B00822FD1 /* LBXScanViewStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXScanViewStyle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +135,28 @@
 				BC7C9DF81EC82B2F00A4DB7D /* LRViewController.mm */,
 				BC0307871EC9AEFF00F970D5 /* LRRecognizer.h */,
 				BC0307881EC9AEFF00F970D5 /* LRRecognizer.mm */,
+				BC8B6CA71ECD942B00822FD1 /* UI */,
 				BC7C9DF91EC82B2F00A4DB7D /* LRViewController.xib */,
+				BC8B6CA51ECD88F400822FD1 /* Image.xcassets */,
 			);
 			path = LogoRecognizer;
+			sourceTree = "<group>";
+		};
+		BC8B6CA71ECD942B00822FD1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BC8B6CA91ECD942B00822FD1 /* LBXScanLineAnimation.h */,
+				BC8B6CAA1ECD942B00822FD1 /* LBXScanLineAnimation.m */,
+				BC8B6CAB1ECD942B00822FD1 /* LBXScanNetAnimation.h */,
+				BC8B6CAC1ECD942B00822FD1 /* LBXScanNetAnimation.m */,
+				BC8B6CAD1ECD942B00822FD1 /* LBXScanVideoZoomView.h */,
+				BC8B6CAE1ECD942B00822FD1 /* LBXScanVideoZoomView.m */,
+				BC8B6CAF1ECD942B00822FD1 /* LBXScanView.h */,
+				BC8B6CB01ECD942B00822FD1 /* LBXScanView.m */,
+				BC8B6CB11ECD942B00822FD1 /* LBXScanViewStyle.h */,
+				BC8B6CB21ECD942B00822FD1 /* LBXScanViewStyle.m */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +166,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8B6CB81ECD942B00822FD1 /* LBXScanVideoZoomView.h in Headers */,
+				BC8B6CB61ECD942B00822FD1 /* LBXScanNetAnimation.h in Headers */,
 				BC7C9DFA1EC82B2F00A4DB7D /* LRViewController.h in Headers */,
+				BC8B6CBA1ECD942B00822FD1 /* LBXScanView.h in Headers */,
 				BC6593CE1EC81B6700531C57 /* LogoRecognizer.h in Headers */,
 				BC0307891EC9AEFF00F970D5 /* LRRecognizer.h in Headers */,
+				BC8B6CB41ECD942B00822FD1 /* LBXScanLineAnimation.h in Headers */,
+				BC8B6CBC1ECD942B00822FD1 /* LBXScanViewStyle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC03078E1EC9B0FA00F970D5 /* cascade.xml in Resources */,
+				BC8B6CA61ECD88F400822FD1 /* Image.xcassets in Resources */,
 				BC7C9DFC1EC82B2F00A4DB7D /* LRViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,8 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8B6CB91ECD942B00822FD1 /* LBXScanVideoZoomView.m in Sources */,
 				BC7C9DFB1EC82B2F00A4DB7D /* LRViewController.mm in Sources */,
 				BC03078A1EC9AEFF00F970D5 /* LRRecognizer.mm in Sources */,
+				BC8B6CBD1ECD942B00822FD1 /* LBXScanViewStyle.m in Sources */,
+				BC8B6CB71ECD942B00822FD1 /* LBXScanNetAnimation.m in Sources */,
+				BC8B6CBB1ECD942B00822FD1 /* LBXScanView.m in Sources */,
+				BC8B6CB51ECD942B00822FD1 /* LBXScanLineAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

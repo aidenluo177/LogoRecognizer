@@ -8,6 +8,8 @@
 
 #import "LRRecognizer.h"
 #import "LRViewController.h"
+#import "LBXScanViewStyle.h"
+#import "LBXScanView.h"
 
 @interface LRViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -20,6 +22,7 @@
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (assign, nonatomic) BOOL isRecoginzing;
 @property (strong, nonatomic) LRRecognizer *recognizer;
+@property (nonatomic,strong) LBXScanView* qRScanView;
 
 @end
 
@@ -50,7 +53,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self startCamera];
+    [self drawScanView];
+    //不延时，可能会导致界面黑屏并卡住一会
+    [self performSelector:@selector(startCamera) withObject:nil afterDelay:0.2];
     [self.delegate LRViewControllerViewDidAppear:self];
 }
 
@@ -65,6 +70,7 @@
     [super viewDidDisappear:animated];
     [self.delegate LRViewControllerViewDidDisappear:self];
     [self stopCamera];
+    [_qRScanView stopScanAnimation];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -79,7 +85,13 @@
 }
 
 - (IBAction)backAction:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:true];
+    if (self.navigationController.childViewControllers.count > 1) {
+        [self.navigationController popViewControllerAnimated:true];
+    } else {
+        [self dismissViewControllerAnimated:true completion:^{
+            
+        }];
+    }
 }
 
 - (IBAction)photoAlbumAction:(UIButton *)sender {
@@ -105,6 +117,7 @@
         if (granted) {
             [self initializeCamera];
         } else {
+            [_qRScanView stopDeviceReadying];
             [self showAlert:@"请授权使用摄像头"];
         }
     }];
@@ -155,6 +168,8 @@
     }
     
     [self.session startRunning];
+    [_qRScanView stopDeviceReadying];
+    [_qRScanView startScanAnimation];
 }
 
 - (void)stopCamera
@@ -273,6 +288,52 @@
         CGImageRelease(newImage);
         return image;
     }
+}
+
+#pragma mark --模仿支付宝
++ (LBXScanViewStyle*)ZhiFuBaoStyle
+{
+    //设置扫码区域参数
+    LBXScanViewStyle *style = [[LBXScanViewStyle alloc]init];
+    style.centerUpOffset = 60;
+    style.xScanRetangleOffset = 30;
+    
+    if ([UIScreen mainScreen].bounds.size.height <= 480 )
+    {
+        //3.5inch 显示的扫码缩小
+        style.centerUpOffset = 40;
+        style.xScanRetangleOffset = 20;
+    }
+    
+    style.notRecoginitonArea = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    style.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle_Inner;
+    style.photoframeLineW = 2.0;
+    style.photoframeAngleW = 16;
+    style.photoframeAngleH = 16;
+    style.colorAngle = [UIColor colorWithRed:0x00 green:0x7b/255.0 blue:0x4f/255.0 alpha:1.0];
+    style.isNeedShowRetangle = NO;
+    style.anmiationStyle = LBXScanViewAnimationStyle_NetGrid;
+    
+    //使用的支付宝里面网格图片
+    UIImage *imgFullNet = [UIImage imageNamed:@"qrcode_scan_full_net" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    style.animationImage = imgFullNet;
+    
+    return style;
+}
+
+//绘制扫描区域
+- (void)drawScanView
+{
+    if (!_qRScanView)
+    {
+        CGRect rect = self.view.frame;
+        rect.origin = CGPointMake(0, 0);
+        
+        self.qRScanView = [[LBXScanView alloc]initWithFrame:rect style:[LRViewController ZhiFuBaoStyle]];
+        
+        [self.overlayView addSubview:_qRScanView];
+    }
+    [_qRScanView startDeviceReadyingWithText:@"相机启动中"];
 }
 
 @end
