@@ -35,8 +35,8 @@
     }
     
    
-    CGFloat leftx = _animationRect.origin.x + 5;
-    CGFloat width = _animationRect.size.width - 10;
+    CGFloat leftx = _animationRect.origin.x + 2;
+    CGFloat width = _animationRect.size.width - 4;
     
     self.frame = CGRectMake(leftx, _animationRect.origin.y + 8, width, 8);
     
@@ -57,8 +57,8 @@
      }];
     
     [UIView animateWithDuration:3 animations:^{
-        CGFloat leftx = _animationRect.origin.x + 5;
-        CGFloat width = _animationRect.size.width - 10;
+        CGFloat leftx = _animationRect.origin.x + 2;
+        CGFloat width = _animationRect.size.width - 4;
         
         
         
