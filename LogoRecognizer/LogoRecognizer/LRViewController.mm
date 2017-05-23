@@ -35,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.enableRecognize = true;
     self.recognizer = [LRRecognizer new];
     self.view.backgroundColor = [UIColor blackColor];
     self.preview = [[UIView alloc] initWithFrame:CGRectZero];
@@ -192,7 +193,8 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
-    if (self.isRecoginzing) {
+    
+    if (self.isRecoginzing || !self.enableRecognize) {
         return;
     }
     self.isRecoginzing = true;
@@ -200,11 +202,11 @@
     BOOL recognizeSuccess = [self.recognizer recoginzeObjectIn:image];
     if (recognizeSuccess) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate LRViewControllerRecognizeLogoSuccess];
+            [self.delegate LRViewControllerRecognizeLogoSuccess:self];
         });
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate LRViewControllerRecognizeLogoFail];
+            [self.delegate LRViewControllerRecognizeLogoFail:self];
         });
     }
     self.isRecoginzing = false;
@@ -225,9 +227,9 @@
     BOOL recognizeSuccess = [self.recognizer recoginzeObjectIn:image];
     [picker dismissViewControllerAnimated:true completion:^{
         if (recognizeSuccess) {
-            [self.delegate LRViewControllerRecognizeLogoSuccess];
+            [self.delegate LRViewControllerRecognizeLogoSuccess:self];
         } else {
-            [self.delegate LRViewControllerRecognizeLogoFail];
+            [self.delegate LRViewControllerRecognizeLogoFail:self];
         }
     }];
 }

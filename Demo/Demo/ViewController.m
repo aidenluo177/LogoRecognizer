@@ -70,12 +70,12 @@
     
 }
 
-- (void)LRViewControllerRecognizeLogoSuccess
+- (void)LRViewControllerRecognizeLogoSuccess:(LRViewController *)controller
 {
     NSLog(@"识别成功");
 }
 
-- (void)LRViewControllerRecognizeLogoFail
+- (void)LRViewControllerRecognizeLogoFail:(LRViewController *)controller
 {
     NSLog(@"识别失败");
 }

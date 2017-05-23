@@ -18,8 +18,8 @@
 - (void)LRViewControllerViewDidAppear:(LRViewController *)controller;
 - (void)LRViewControllerViewWillDisappear:(LRViewController *)controller;
 - (void)LRViewControllerViewDidDisappear:(LRViewController *)controller;
-- (void)LRViewControllerRecognizeLogoSuccess;
-- (void)LRViewControllerRecognizeLogoFail;
+- (void)LRViewControllerRecognizeLogoSuccess:(LRViewController *)controller;
+- (void)LRViewControllerRecognizeLogoFail:(LRViewController *)controller;
 
 @end
 
@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *overlayView;
 @property (weak, nonatomic) id<LRViewControllerDelegate> delegate;
+@property (assign, atomic) BOOL enableRecognize; //是否启动识别，默认YES
 
 + (instancetype)create;
 
