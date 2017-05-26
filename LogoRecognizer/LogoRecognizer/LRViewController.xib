@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGM-zJ-YXB">
-                            <rect key="frame" x="4" y="18" width="44" height="44"/>
+                            <rect key="frame" x="0.0" y="18" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="QrI-J1-Wor"/>
                                 <constraint firstAttribute="height" constant="44" id="efT-2b-bpB"/>
@@ -40,7 +40,7 @@
                                 <action selector="backAction:" destination="-1" eventType="touchUpInside" id="63A-WC-JLu"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="国寿客户节" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MM-4E-EVY">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="国寿客户节" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MM-4E-EVY">
                             <rect key="frame" x="137" y="30" width="100" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="xu8-Y5-Ktt"/>
@@ -50,9 +50,8 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.047058823529411764" green="0.047058823529411764" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="AGM-zJ-YXB" firstAttribute="leading" secondItem="PIH-4E-xTN" secondAttribute="leading" constant="4" id="bdN-aj-stS"/>
+                        <constraint firstItem="AGM-zJ-YXB" firstAttribute="leading" secondItem="PIH-4E-xTN" secondAttribute="leading" id="bdN-aj-stS"/>
                         <constraint firstItem="8MM-4E-EVY" firstAttribute="centerY" secondItem="AGM-zJ-YXB" secondAttribute="centerY" id="d2W-nn-UPK"/>
                         <constraint firstItem="8MM-4E-EVY" firstAttribute="centerX" secondItem="PIH-4E-xTN" secondAttribute="centerX" id="dX6-tQ-PTh"/>
                         <constraint firstAttribute="height" constant="64" id="p5O-WP-DeH"/>
@@ -68,8 +67,8 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ar" translatesAutoresizingMaskIntoConstraints="NO" id="ne9-z8-9Yh">
                                     <rect key="frame" x="80.5" y="16" width="27" height="27"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-Yf-dUf">
-                                    <rect key="frame" x="84" y="48" width="21" height="19.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR扫描" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-Yf-dUf">
+                                    <rect key="frame" x="67" y="48" width="53.5" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" red="0.0" green="0.4823529411764706" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -89,8 +88,8 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_photo" translatesAutoresizingMaskIntoConstraints="NO" id="RuI-L0-X33">
                                     <rect key="frame" x="80.5" y="16" width="27" height="27"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09r-91-pv5">
-                                    <rect key="frame" x="78.5" y="48" width="31" height="18.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相册上传" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09r-91-pv5">
+                                    <rect key="frame" x="63.5" y="48" width="61.5" height="18.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -151,7 +150,7 @@
     </objects>
     <resources>
         <image name="ic_ar" width="27" height="27"/>
-        <image name="ic_common_close_white" width="24" height="24"/>
+        <image name="ic_common_close_white" width="10" height="17"/>
         <image name="ic_photo" width="27" height="27"/>
     </resources>
 </document>

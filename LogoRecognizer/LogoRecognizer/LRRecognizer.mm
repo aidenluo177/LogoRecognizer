@@ -11,6 +11,7 @@
 @interface LRRecognizer ()
 {
     cv::CascadeClassifier* cascade;
+    int sucessCount;
 }
 
 @end
@@ -47,7 +48,13 @@
         equalizeHist(scene, scene);
         cascade -> detectMultiScale(scene, recognizeRegions);
         scene.release();
-        return recognizeRegions.size() > 0;
+        if (recognizeRegions.size() > 0) {
+            sucessCount += 1;
+            sucessCount = MIN(20, sucessCount);
+        } else {
+            sucessCount = 0;
+        }
+        return sucessCount > 10;
     }
 }
 
