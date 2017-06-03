@@ -50,11 +50,11 @@
         scene.release();
         if (recognizeRegions.size() > 0) {
             sucessCount += 1;
-            sucessCount = MIN(20, sucessCount);
+            sucessCount = MIN(21, sucessCount);
         } else {
             sucessCount = 0;
         }
-        return sucessCount > 10;
+        return sucessCount > 20;
     }
 }
 
