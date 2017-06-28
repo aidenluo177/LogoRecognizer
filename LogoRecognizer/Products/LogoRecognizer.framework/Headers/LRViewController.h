@@ -18,8 +18,11 @@
 - (void)LRViewControllerViewDidAppear:(LRViewController *)controller;
 - (void)LRViewControllerViewWillDisappear:(LRViewController *)controller;
 - (void)LRViewControllerViewDidDisappear:(LRViewController *)controller;
+- (void)LRViewControllerPhotoSelectViewWillAppear:(LRViewController *)controller;
 - (void)LRViewControllerRecognizeLogoSuccess:(LRViewController *)controller;
 - (void)LRViewControllerRecognizeLogoFail:(LRViewController *)controller;
+- (void)LRViewControllerRecognizePhotoLogoSuccess:(LRViewController *)controller;
+- (void)LRViewControllerRecognizePhotoLogoFail:(LRViewController *)controller;
 
 @end
 

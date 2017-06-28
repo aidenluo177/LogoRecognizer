@@ -107,6 +107,7 @@
     pickerController.modalPresentationStyle = UIModalPresentationPopover;
     [self presentViewController:pickerController animated:true completion:^{
         self.isRecoginzing = true;
+        [self.delegate LRViewControllerPhotoSelectViewWillAppear:self];
     }];
 }
 
@@ -226,19 +227,21 @@
     id obj = info[UIImagePickerControllerOriginalImage];
     if (obj && [obj isKindOfClass:[UIImage class]]) {
         UIImage *image = obj;
-        UIImage *resizeImage = [self resizedImageToSize:CGSizeMake(image.size.width/4, image.size.width/4) image:image];
+        CGFloat imageWidth = image.size.width >= image.size.height ? image.size.width : image.size.height;
+        CGFloat scale = MAX(MIN(imageWidth/640, 4),1);
+        UIImage *resizeImage = [UIImage imageWithCGImage:image.CGImage scale:image.scale * scale orientation:image.imageOrientation];
         BOOL recognizeSuccess = [self.recognizer recoginzeObjectIn:resizeImage];
         [picker dismissViewControllerAnimated:true completion:^{
             if (recognizeSuccess) {
-                [self.delegate LRViewControllerRecognizeLogoSuccess:self];
+                [self.delegate LRViewControllerRecognizePhotoLogoSuccess:self];
             } else {
-                [self.delegate LRViewControllerRecognizeLogoFail:self];
+                [self.delegate LRViewControllerRecognizePhotoLogoFail:self];
             }
             self.isRecoginzing = false;
         }];
     } else {
         [picker dismissViewControllerAnimated:true completion:^{
-            [self.delegate LRViewControllerRecognizeLogoFail:self];
+            [self.delegate LRViewControllerRecognizePhotoLogoFail:self];
             self.isRecoginzing = false;
         }];
     }
@@ -347,99 +350,6 @@
         [self.overlayView addSubview:_qRScanView];
     }
     [_qRScanView startDeviceReadyingWithText:@"相机启动中"];
-}
-
--(UIImage*)resizedImageToSize:(CGSize)dstSize image:(UIImage *)image
-{
-    CGImageRef imgRef = image.CGImage;
-    // the below values are regardless of orientation : for UIImages from Camera, width>height (landscape)
-    CGSize  srcSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef)); // not equivalent to self.size (which is dependant on the imageOrientation)!
-    
-    /* Don't resize if we already meet the required destination size. */
-    if (CGSizeEqualToSize(srcSize, dstSize)) {
-        return image;
-    }
-    
-    CGFloat scaleRatio = dstSize.width / srcSize.width;
-    UIImageOrientation orient = image.imageOrientation;
-    CGAffineTransform transform = CGAffineTransformIdentity;
-    switch(orient) {
-            
-        case UIImageOrientationUp: //EXIF = 1
-            transform = CGAffineTransformIdentity;
-            break;
-            
-        case UIImageOrientationUpMirrored: //EXIF = 2
-            transform = CGAffineTransformMakeTranslation(srcSize.width, 0.0);
-            transform = CGAffineTransformScale(transform, -1.0, 1.0);
-            break;
-            
-        case UIImageOrientationDown: //EXIF = 3
-            transform = CGAffineTransformMakeTranslation(srcSize.width, srcSize.height);
-            transform = CGAffineTransformRotate(transform, M_PI);
-            break;
-            
-        case UIImageOrientationDownMirrored: //EXIF = 4
-            transform = CGAffineTransformMakeTranslation(0.0, srcSize.height);
-            transform = CGAffineTransformScale(transform, 1.0, -1.0);
-            break;
-            
-        case UIImageOrientationLeftMirrored: //EXIF = 5
-            dstSize = CGSizeMake(dstSize.height, dstSize.width);
-            transform = CGAffineTransformMakeTranslation(srcSize.height, srcSize.width);
-            transform = CGAffineTransformScale(transform, -1.0, 1.0);
-            transform = CGAffineTransformRotate(transform, 3.0 * M_PI_2);
-            break;
-            
-        case UIImageOrientationLeft: //EXIF = 6
-            dstSize = CGSizeMake(dstSize.height, dstSize.width);
-            transform = CGAffineTransformMakeTranslation(0.0, srcSize.width);
-            transform = CGAffineTransformRotate(transform, 3.0 * M_PI_2);
-            break;
-            
-        case UIImageOrientationRightMirrored: //EXIF = 7
-            dstSize = CGSizeMake(dstSize.height, dstSize.width);
-            transform = CGAffineTransformMakeScale(-1.0, 1.0);
-            transform = CGAffineTransformRotate(transform, M_PI_2);
-            break;
-            
-        case UIImageOrientationRight: //EXIF = 8
-            dstSize = CGSizeMake(dstSize.height, dstSize.width);
-            transform = CGAffineTransformMakeTranslation(srcSize.height, 0.0);
-            transform = CGAffineTransformRotate(transform, M_PI_2);
-            break;
-            
-        default:
-            [NSException raise:NSInternalInconsistencyException format:@"Invalid image orientation"];
-            
-    }
-    
-    /////////////////////////////////////////////////////////////////////////////
-    // The actual resize: draw the image on a new context, applying a transform matrix
-    UIGraphicsBeginImageContextWithOptions(dstSize, NO, image.scale);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    if (!context) {
-        return nil;
-    }
-    
-    if (orient == UIImageOrientationRight || orient == UIImageOrientationLeft) {
-        CGContextScaleCTM(context, -scaleRatio, scaleRatio);
-        CGContextTranslateCTM(context, -srcSize.height, 0);
-    } else {
-        CGContextScaleCTM(context, scaleRatio, -scaleRatio);
-        CGContextTranslateCTM(context, 0, -srcSize.height);
-    }
-    
-    CGContextConcatCTM(context, transform);
-    
-    // we use srcSize (and not dstSize) as the size to specify is in user space (and we use the CTM to apply a scaleRatio)
-    CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, srcSize.width, srcSize.height), imgRef);
-    UIImage* resizedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return resizedImage;
 }
 
 @end

@@ -80,4 +80,19 @@
     NSLog(@"识别失败");
 }
 
+- (void)LRViewControllerPhotoSelectViewWillAppear:(LRViewController *)controller
+{
+    NSLog(@"调起相册");
+}
+
+- (void)LRViewControllerRecognizePhotoLogoSuccess:(LRViewController *)controller
+{
+    NSLog(@"相册识别成功");
+}
+
+- (void)LRViewControllerRecognizePhotoLogoFail:(LRViewController *)controller
+{
+    NSLog(@"相册识别失败");
+}
+
 @end
