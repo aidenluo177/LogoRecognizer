@@ -33,9 +33,17 @@
     return [[LRViewController alloc] initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle bundleForClass:[self class]]];
 }
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.enableRecognize = true;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.enableRecognize = true;
     self.recognizer = [LRRecognizer new];
     self.view.backgroundColor = [UIColor blackColor];
     self.preview = [[UIView alloc] initWithFrame:CGRectZero];

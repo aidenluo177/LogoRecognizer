@@ -28,6 +28,7 @@
 - (IBAction)testSDKAction:(UIButton *)sender {
     LRViewController *vc = [LRViewController create];
     vc.delegate = self;
+//    vc.enableRecognize = false;
     [self.navigationController pushViewController:vc animated:true];
 }
 
