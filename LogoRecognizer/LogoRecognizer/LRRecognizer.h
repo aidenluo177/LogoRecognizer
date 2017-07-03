@@ -13,6 +13,6 @@
 
 @interface LRRecognizer : NSObject
 
-- (BOOL)recoginzeObjectIn:(UIImage *)scene;
+- (BOOL)recoginzeObjectIn:(UIImage *)image isPhoto:(BOOL)isPhoto;
 
 @end

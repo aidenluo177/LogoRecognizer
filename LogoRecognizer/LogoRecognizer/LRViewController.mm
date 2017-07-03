@@ -208,7 +208,7 @@
     }
     self.isRecoginzing = true;
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
-    BOOL recognizeSuccess = [self.recognizer recoginzeObjectIn:image];
+    BOOL recognizeSuccess = [self.recognizer recoginzeObjectIn:image isPhoto:false];
     if (recognizeSuccess) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate LRViewControllerRecognizeLogoSuccess:self];
@@ -238,7 +238,7 @@
         CGFloat imageWidth = image.size.width >= image.size.height ? image.size.width : image.size.height;
         CGFloat scale = MAX(MIN(imageWidth/640, 4),1);
         UIImage *resizeImage = [UIImage imageWithCGImage:image.CGImage scale:image.scale * scale orientation:image.imageOrientation];
-        BOOL recognizeSuccess = [self.recognizer recoginzeObjectIn:resizeImage];
+        BOOL recognizeSuccess = [self.recognizer recoginzeObjectIn:resizeImage isPhoto:true];
         [picker dismissViewControllerAnimated:true completion:^{
             if (recognizeSuccess) {
                 [self.delegate LRViewControllerRecognizePhotoLogoSuccess:self];

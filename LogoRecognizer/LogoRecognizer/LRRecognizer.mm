@@ -34,7 +34,7 @@
     delete cascade;
 }
 
-- (BOOL)recoginzeObjectIn:(UIImage *)image
+- (BOOL)recoginzeObjectIn:(UIImage *)image isPhoto:(BOOL)isPhoto
 {
     @autoreleasepool {
         if (!image) {
@@ -48,13 +48,17 @@
         equalizeHist(scene, scene);
         cascade -> detectMultiScale(scene, recognizeRegions);
         scene.release();
-        if (recognizeRegions.size() > 0) {
-            sucessCount += 1;
-            sucessCount = MIN(21, sucessCount);
+        if (isPhoto) {
+            return recognizeRegions.size() > 0;
         } else {
-            sucessCount = 0;
+            if (recognizeRegions.size() > 0) {
+                sucessCount += 1;
+                sucessCount = MIN(21, sucessCount);
+            } else {
+                sucessCount = 0;
+            }
+            return sucessCount > 20;
         }
-        return sucessCount > 20;
     }
 }
 
