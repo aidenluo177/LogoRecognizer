@@ -1,6 +1,0 @@
-framework module LogoRecognizer {
-  umbrella header "LogoRecognizer.h"
-
-  export *
-  module * { export * }
-}
